@@ -1,3 +1,7 @@
+/**
+ * Annab elud, punktide seisu ja parima tulemuse
+ */
+
 public class MänguSeis {
 
     private int elud = 3;

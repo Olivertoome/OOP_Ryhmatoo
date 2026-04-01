@@ -1,3 +1,8 @@
+/**
+ * Jooksutab kogu protsessi.
+ * Küsib kasutajalt jada.
+ * Annab infot mängu sesu kohta.
+ */
 public class Mäng {
 
     private MänguSeis mänguSeis;
