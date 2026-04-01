@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Jooksutab kogu protsessi.
  * Küsib kasutajalt jada.
@@ -28,7 +30,7 @@ public class Mäng {
         System.out.println();
 
         while (mänguSeis.getElud() != 0) {
-
+            mängiRaund();
         }
 
         System.out.println("Mäng läbi!");
@@ -45,5 +47,10 @@ public class Mäng {
         } else {
             System.out.println("Jäid rekordist " + (parim - mänguSeis.getParimTulemus()) + "maha.");
         }
+    }
+
+    public void mängiRaund() {
+        jadagenereeria.SuvalineArv();
+        List<Integer> jada = jadagenereeria.getJada();
     }
 }
