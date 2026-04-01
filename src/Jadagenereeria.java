@@ -12,6 +12,7 @@ public class Jadagenereeria {
     private List<Integer> jada = new ArrayList<>();
     private Random random = new Random();
 
+    // Annab suvalise arvu 0 - 9.
     public void SuvalineArv() {
         jada.add(random.nextInt(10));
     }
@@ -20,6 +21,7 @@ public class Jadagenereeria {
         return jada;
     }
 
+    // Teeb jaga tühjaks, kui mängja elud kaotab.
     public void puhasta() {
         jada.clear();
     }
