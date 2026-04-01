@@ -1,5 +1,6 @@
 public class Mäng {
 
-    private int elud = 3;
-    private int punktid;
+    private MänguSeis mänguSeis;
+    private Jadagenereeria jadagenereeria;
+    private PunktiHaldur punktiHaldur;
 }

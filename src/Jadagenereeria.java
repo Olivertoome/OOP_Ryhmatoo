@@ -1,3 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Jadagenereeria extends Mäng {
 
+    private List<Integer> jada = new ArrayList<>();
+    private Random random = new Random();
+
+    public void SuvalineArv() {
+        jada.add(random.nextInt(10));
+    }
+
+    public List<Integer> getJada() {
+        return jada;
+    }
+
+    public void puhasta() {
+        jada.clear();
+    }
 }
