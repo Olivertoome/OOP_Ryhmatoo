@@ -4,6 +4,8 @@
  * Jan Tristan Moorlat
  * Karl Teetlaus
  *
+ * --------------------------------------------------------------------------------------
+ *
  * Projekti kirjeldus:
  * Projektiks on käsureal töötav mälumäng.
  * Mängu eesmärk on meelde jätta juhuslikult genereeritud arvujada ning
@@ -15,7 +17,7 @@
  * Programmi alguses loetakse failist parim_tulemus.txt parim tulemus ning mängu lõpus
  * võrreldakse seda mängija saavutatud punktidega. Vajadusel salvestatakse uus rekord faili.
  *
- *
+ *--------------------------------------------------------------------------------------
  *
  * Klass Mäng:
  * Projekti peamine klass, mis juhib kogu mängu loogikat. Klass
@@ -28,7 +30,6 @@
  * mängiRaund() – viib läbi ühe mänguraundi: lisab jadasse uue arvu, küsib kasutajalt vastust ja kontrollib selle õigsust.
  *
  *
- *
  * Klass Jadagenereeria:
  * Klassi eesmärk on hallata mängus kasutatavat arvujada. Klass lisab jadasse
  * juhuslikke numbreid vahemikust 0 kuni 9.
@@ -38,14 +39,12 @@
  * getJada() – tagastab hetkelise jada.
  *
  *
- *
  * Klass MänguSeis:
  * Klassi eesmärk on hoida mängu hetkeseisu. Säilitatakse mängija elude arv, punktisumma ja parim tulemus.
  *
  * Olulisemad meetodid:
  * Konstruktor mänguseisu loomiseks.
  * get ja set elude, punktide ja parima tulemuse muutmiseks ja lugemine.
- *
  *
  *
  * Klass PunktiHaldur:
@@ -59,9 +58,21 @@
  * get ja set faili nime muutmiseks ja lugemine.
  *
  *
- *
  * Klass main:
  * Käivitab programmi.
+ *
+ * --------------------------------------------------------------------------------------
+ *
+ * Rühmaliikmete osalemine:
+ *
+ * Tegime
+ *
+ * Oliver Toome:
+ *
+ * Jan Tristan Moorlat:
+ *
+ * Karl Teetlaus:
+ *
  */
 
 public class main {
