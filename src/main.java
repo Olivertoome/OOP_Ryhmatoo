@@ -72,7 +72,7 @@
  * Algne jaotus:
  *
  * Mõtlesime jaotada ära klassid: PunktiHaldur, MänguSeis ja Jadagenereeria,
- * seejärel tegeleda koos Mäng klassiga.
+ * seejärel tegeleda koos Mäng klassiga. Ajakulu oli kõikidel iseseisvalt oli umbes 2-3h ning tegime ka vahepeal kõik koos, nii et kolme peale kokku oli ajakulu 8-10h.
  *
  * Oliver Toome:
  * Klass PunktiHaldur
