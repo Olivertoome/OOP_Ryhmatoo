@@ -13,8 +13,12 @@ public class Mäng {
     private Jadagenereeria jadagenereeria;
     private PunktiHaldur punktiHaldur;
 
+    /**
+    * Loob mängu alustamiseks vajalikud objektid
+    * Loeb failist parima tulemuse
+    */
     public Mäng() {
-        // Laeme parima tulemuse ja salvestame selle.
+        
         punktiHaldur = new PunktiHaldur("parim_tulemus.txt");
         int parim = punktiHaldur.laeParimTulemus();
 
@@ -22,6 +26,9 @@ public class Mäng {
         jadagenereeria = new Jadagenereeria();
     }
 
+    /**
+    * Käivitan mängu
+    */
     public void alusta() {
         // Seletab mängu
         System.out.println("-----MÄLUMÄNG-----");
@@ -31,16 +38,18 @@ public class Mäng {
         System.out.println("Ära oma suguvõsa häbista, kivi kotti!");
         System.out.println();
 
+        // Kordab raunde kuniks elusid alles on
         while (mänguSeis.getElud() != 0) {
             mängiRaund();
         }
 
+        // Kui elud otsas, siis mäng lõppeb
         System.out.println("Mäng läbi!");
         System.out.println("Sinu punktid: " + mänguSeis.getPunktid());
 
         int parim = mänguSeis.getParimTulemus();
 
-        // Kontrollib kas on uus rekord või mitte ja tagastab selle.
+        // Kontrollib kas on uus rekord või mitte ja tagastab selle. Kui on uus rekord salvestab ka faili.
         if (mänguSeis.getPunktid() > parim) {
             System.out.println("UUS REKORD!");
             mänguSeis.setParimTulemus(mänguSeis.getPunktid());
@@ -52,6 +61,9 @@ public class Mäng {
         }
     }
 
+    /**
+    * Viib läbi mängu ühe raundi
+    */
     public void mängiRaund() {
         jadagenereeria.SuvalineArv();
         List<Integer> jada = jadagenereeria.getJada();
@@ -64,6 +76,7 @@ public class Mäng {
 
         boolean õige = false;
 
+        // Kordab küsimist, kuni elud saavad otsa.
         while (!õige && mänguSeis.getElud() > 0) {
 
             System.out.println("Sisesta kogu jada:");
@@ -71,6 +84,7 @@ public class Mäng {
             String vastus = scanner.nextLine().replaceAll(" ", "");
             õige = true;
 
+            // Kontrollib kas mängija vastus on õige
             if (vastus.length() != jada.size()) {
                 õige = false;
             } else {
@@ -88,6 +102,7 @@ public class Mäng {
                 System.out.println();
             }
 
+            // lisab punkti kui vastus õige, võtab elu maha kui vale.
             if (õige) {
                 System.out.println("Õige!");
                 mänguSeis.setPunktid(mänguSeis.getPunktid() + 1);
