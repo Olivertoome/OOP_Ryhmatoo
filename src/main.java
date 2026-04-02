@@ -94,7 +94,7 @@
  * Tegemise mured:
  *
  * Ainuke mure, mis vahepeal tekkis oli see, et kui juhtumisi 2 inimest samal ajal midagi muutsid või tegid Mäng klassis, tekkisid merge conflictid.
- *
+ * Teadmistes ja oskustes otseselt mingit puudust ei tundnud, eks vahepeal oli ikka vaja googledada, aga üldiselt tegevus sujus.
  */
 
 public class main {
