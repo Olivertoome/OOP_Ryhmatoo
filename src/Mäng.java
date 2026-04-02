@@ -6,6 +6,7 @@ import java.util.Scanner;
  * Küsib kasutajalt jada.
  * Annab infot mängu sesu kohta.
  */
+
 public class Mäng {
 
     private MänguSeis mänguSeis;
@@ -61,37 +62,42 @@ public class Mäng {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Sisesta kogu jada:");
+        boolean õige = false;
 
-        boolean õige = true;
-        String vastus = scanner.nextLine().replaceAll(" ", "");
+        while (!õige && mänguSeis.getElud() > 0) {
 
-        if (vastus.length() != jada.size()) {
-            õige = false;
-        } else {
-            for (int i = 0; i < jada.size(); i++) {
-                int number = vastus.charAt(i) - '0';
+            System.out.println("Sisesta kogu jada:");
 
-                if (number != jada.get(i)) {
-                    õige = false;
+            String vastus = scanner.nextLine().replaceAll(" ", "");
+            õige = true;
+
+            if (vastus.length() != jada.size()) {
+                õige = false;
+            } else {
+                for (int i = 0; i < jada.size(); i++) {
+                    int number = vastus.charAt(i) - '0';
+
+                    if (number != jada.get(i)) {
+                        õige = false;
+                    }
                 }
             }
-        }
 
-        // "peidab" vanad read
-        for (int i = 0; i < 30; i++) {
-            System.out.println();
-        }
+            // "peidab" vanad read
+            for (int i = 0; i < 30; i++) {
+                System.out.println();
+            }
 
-        if (õige) {
-            System.out.println("Õige!");
-            mänguSeis.setPunktid(mänguSeis.getPunktid() + 1);
-        } else {
-            System.out.println("Vale!");
-            mänguSeis.setElud(mänguSeis.getElud() - 1);
-            jadagenereeria.puhasta();
+            if (õige) {
+                System.out.println("Õige!");
+                mänguSeis.setPunktid(mänguSeis.getPunktid() + 1);
+            } else {
+                mänguSeis.setElud(mänguSeis.getElud() - 1);
+                if (mänguSeis.getElud() > 0) {
+                    System.out.println("Vale! Proovi uuesti");
+                }
+            }
+            System.out.println("Elusid alles: " + mänguSeis.getElud());
         }
-
-        System.out.println("Elusid alles: " + mänguSeis.getElud());
     }
 }
