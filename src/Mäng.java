@@ -41,11 +41,12 @@ public class Mäng {
         // Kontrollib kas on uus rekord või mitte ja tagastab selle.
         if (mänguSeis.getPunktid() > parim) {
             System.out.println("UUS REKORD!");
+            mänguSeis.setParimTulemus(mänguSeis.getPunktid());
             punktiHaldur.salvestaParimTulemus(mänguSeis.getParimTulemus());
         } else if (mänguSeis.getPunktid() == parim) {
             System.out.println("Pole paha, jäid parima tulemusega viiki!");
         } else {
-            System.out.println("Jäid rekordist " + (parim - mänguSeis.getParimTulemus()) + "maha.");
+            System.out.println("Jäid rekordist " + (parim - mänguSeis.getPunktid()) + "maha.");
         }
     }
 
