@@ -68,11 +68,12 @@
  * Projekti käigus tegime enamus asju koos, aitasime üksteist,
  * parandasime vigu ja täiendasime koodi ühiselt. Lõpuks võib öelda, et kõik
  * panustasid projekti erinevatesse osadesse ja töö valmis koostööna.
+ * Ajakulu kõikidel iseseisvalt oli umbes 2-3h ning tegime ka vahepeal kõik koos, nii et kolme peale kokku oli ajakulu 8-10h.
  *
  * Algne jaotus:
  *
  * Mõtlesime jaotada ära klassid: PunktiHaldur, MänguSeis ja Jadagenereeria,
- * seejärel tegeleda koos Mäng klassiga. Ajakulu oli kõikidel iseseisvalt oli umbes 2-3h ning tegime ka vahepeal kõik koos, nii et kolme peale kokku oli ajakulu 8-10h.
+ * seejärel tegeleda koos Mäng klassiga.
  *
  * Oliver Toome:
  * Klass PunktiHaldur
@@ -92,6 +93,7 @@
  *
  * Tegemise mured:
  *
+ * Ainuke mure, mis vahepeal tekkis oli see, et kui juhtumisi 2 inimest samal ajal midagi muutsid või tegid Mäng klassis, tekkisid merge conflictid.
  *
  */
 
