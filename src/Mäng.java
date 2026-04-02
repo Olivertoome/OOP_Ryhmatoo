@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Jooksutab kogu protsessi.
@@ -46,7 +47,7 @@ public class Mäng {
         } else if (mänguSeis.getPunktid() == parim) {
             System.out.println("Pole paha, jäid parima tulemusega viiki!");
         } else {
-            System.out.println("Jäid rekordist " + (parim - mänguSeis.getPunktid()) + "maha.");
+            System.out.println("Jäid rekordist " + (parim - mänguSeis.getPunktid()) + " maha.");
         }
     }
 
@@ -63,7 +64,7 @@ public class Mäng {
         System.out.println("Sisesta kogu jada:");
 
         boolean õige = true;
-        String vastus = scanner.nextLine();
+        String vastus = scanner.nextLine().replaceAll(" ", "");
 
         if (vastus.length() != jada.size()) {
             õige = false;
@@ -88,6 +89,7 @@ public class Mäng {
         } else {
             System.out.println("Vale!");
             mänguSeis.setElud(mänguSeis.getElud() - 1);
+            jadagenereeria.puhasta();
         }
 
         System.out.println("Elusid alles: " + mänguSeis.getElud());
