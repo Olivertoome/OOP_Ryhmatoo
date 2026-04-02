@@ -88,6 +88,11 @@
  * Klass Jadagenereeria
  * Klass Mäng
  *
+ * --------------------------------------------------------------------------------------
+ *
+ * Tegemise mured:
+ *
+ *
  */
 
 public class main {
