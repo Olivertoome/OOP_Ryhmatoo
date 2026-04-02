@@ -20,9 +20,4 @@ public class Jadagenereeria {
     public List<Integer> getJada() {
         return jada;
     }
-
-    // Teeb jaga tühjaks, kui mängja elud kaotab.
-    public void puhasta() {
-        jada.clear();
-    }
 }
