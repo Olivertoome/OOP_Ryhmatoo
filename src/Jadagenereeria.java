@@ -17,6 +17,7 @@ public class Jadagenereeria {
         jada.add(random.nextInt(10));
     }
 
+    // Tagastab jada.
     public List<Integer> getJada() {
         return jada;
     }
