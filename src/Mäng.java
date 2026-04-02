@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Jooksutab kogu protsessi.
  * Küsib kasutajalt jada.
- * Annab infot mängu sesu kohta.
+ * Annab infot mängu seisu kohta.
  */
 
 public class Mäng {
@@ -27,7 +27,7 @@ public class Mäng {
     }
 
     /**
-    * Käivitan mängu
+    * Käivitab mängu
     */
     public void alusta() {
         // Seletab mängu
