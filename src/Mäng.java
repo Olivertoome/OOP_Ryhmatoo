@@ -52,5 +52,43 @@ public class Mäng {
     public void mängiRaund() {
         jadagenereeria.SuvalineArv();
         List<Integer> jada = jadagenereeria.getJada();
+
+        int uusArv = jada.get(jada.size() - 1);
+
+        System.out.println("Jäta see number meelde: " + uusArv);
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Sisesta kogu jada:");
+
+        boolean õige = true;
+        String vastus = scanner.nextLine();
+
+        if (vastus.length() != jada.size()) {
+            õige = false;
+        } else {
+            for (int i = 0; i < jada.size(); i++) {
+                int number = vastus.charAt(i) - '0';
+
+                if (number != jada.get(i)) {
+                    õige = false;
+                }
+            }
+        }
+
+        // "peidab" vanad read
+        for (int i = 0; i < 30; i++) {
+            System.out.println();
+        }
+
+        if (õige) {
+            System.out.println("Õige!");
+            mänguSeis.setPunktid(mänguSeis.getPunktid() + 1);
+        } else {
+            System.out.println("Vale!");
+            mänguSeis.setElud(mänguSeis.getElud() - 1);
+        }
+
+        System.out.println("Elusid alles: " + mänguSeis.getElud());
     }
 }
