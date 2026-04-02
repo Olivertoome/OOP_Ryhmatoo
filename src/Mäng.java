@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Jooksutab kogu protsessi.
@@ -10,6 +11,7 @@ public class Mäng {
     private MänguSeis mänguSeis;
     private Jadagenereeria jadagenereeria;
     private PunktiHaldur punktiHaldur;
+    private Scanner scanner = new Scanner(System.in);
 
     public Mäng() {
         // Laeme parima tulemuse ja salvestame selle.
@@ -41,16 +43,40 @@ public class Mäng {
         // Kontrollib kas on uus rekord või mitte ja tagastab selle.
         if (mänguSeis.getPunktid() > parim) {
             System.out.println("UUS REKORD!");
-            punktiHaldur.salvestaParimTulemus(mänguSeis.getParimTulemus());
+            mänguSeis.setParimTulemus(mänguSeis.getPunktid());
+            punktiHaldur.salvestaParimTulemus(mänguSeis.getPunktid());
         } else if (mänguSeis.getPunktid() == parim) {
             System.out.println("Pole paha, jäid parima tulemusega viiki!");
         } else {
-            System.out.println("Jäid rekordist " + (parim - mänguSeis.getParimTulemus()) + "maha.");
+            System.out.println("Jäid rekordist " + (parim - mänguSeis.getParimTulemus()) + " maha.");
         }
     }
 
     public void mängiRaund() {
         jadagenereeria.SuvalineArv();
         List<Integer> jada = jadagenereeria.getJada();
+
+        System.out.println("Jada: " + jada);
+        System.out.println("Vajuta Enter kui oled valmis...");
+        scanner.nextLine();
+
+        System.out.println("Sisesta " + jada.size() + " numbrit (tühikuga eraldatud):");
+        boolean õige = true;
+        for (int i = 0; i < jada.size(); i++) {
+            int vastus = scanner.nextInt();
+            if (vastus != jada.get(i)) {
+                õige = false;
+            }
+        }
+        scanner.nextLine();
+
+        if (õige) {
+            System.out.println("Õige! +1 punkt");
+            mänguSeis.setPunktid(mänguSeis.getPunktid() + 1);
+        } else {
+            System.out.println("Vale! Kaotad elu. Elud: " + (mänguSeis.getElud() - 1));
+            mänguSeis.setElud(mänguSeis.getElud() - 1);
+            jadagenereeria.puhasta();
+        }
     }
 }

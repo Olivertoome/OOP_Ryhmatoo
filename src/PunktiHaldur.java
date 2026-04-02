@@ -36,7 +36,7 @@ public class PunktiHaldur {
     // Salvestab uue parima tulemuse.
     public void salvestaParimTulemus(int tulemus) {
         try (PrintWriter printWriter = new PrintWriter(new FileWriter(failinimi))) {
-            printWriter.write(tulemus);
+            printWriter.print(tulemus);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
