@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Jooksutab kogu protsessi.
@@ -11,7 +10,6 @@ public class Mäng {
     private MänguSeis mänguSeis;
     private Jadagenereeria jadagenereeria;
     private PunktiHaldur punktiHaldur;
-    private Scanner scanner = new Scanner(System.in);
 
     public Mäng() {
         // Laeme parima tulemuse ja salvestame selle.
@@ -44,11 +42,11 @@ public class Mäng {
         if (mänguSeis.getPunktid() > parim) {
             System.out.println("UUS REKORD!");
             mänguSeis.setParimTulemus(mänguSeis.getPunktid());
-            punktiHaldur.salvestaParimTulemus(mänguSeis.getPunktid());
+            punktiHaldur.salvestaParimTulemus(mänguSeis.getParimTulemus());
         } else if (mänguSeis.getPunktid() == parim) {
             System.out.println("Pole paha, jäid parima tulemusega viiki!");
         } else {
-            System.out.println("Jäid rekordist " + (parim - mänguSeis.getParimTulemus()) + " maha.");
+            System.out.println("Jäid rekordist " + (parim - mänguSeis.getPunktid()) + "maha.");
         }
     }
 
@@ -56,27 +54,42 @@ public class Mäng {
         jadagenereeria.SuvalineArv();
         List<Integer> jada = jadagenereeria.getJada();
 
-        System.out.println("Jada: " + jada);
-        System.out.println("Vajuta Enter kui oled valmis...");
-        scanner.nextLine();
+        int uusArv = jada.get(jada.size() - 1);
 
-        System.out.println("Sisesta " + jada.size() + " numbrit (tühikuga eraldatud):");
+        System.out.println("Jäta see number meelde: " + uusArv);
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Sisesta kogu jada:");
+
         boolean õige = true;
-        for (int i = 0; i < jada.size(); i++) {
-            int vastus = scanner.nextInt();
-            if (vastus != jada.get(i)) {
-                õige = false;
+        String vastus = scanner.nextLine();
+
+        if (vastus.length() != jada.size()) {
+            õige = false;
+        } else {
+            for (int i = 0; i < jada.size(); i++) {
+                int number = vastus.charAt(i) - '0';
+
+                if (number != jada.get(i)) {
+                    õige = false;
+                }
             }
         }
-        scanner.nextLine();
+
+        // "peidab" vanad read
+        for (int i = 0; i < 30; i++) {
+            System.out.println();
+        }
 
         if (õige) {
-            System.out.println("Õige! +1 punkt");
+            System.out.println("Õige!");
             mänguSeis.setPunktid(mänguSeis.getPunktid() + 1);
         } else {
-            System.out.println("Vale! Kaotad elu. Elud: " + (mänguSeis.getElud() - 1));
+            System.out.println("Vale!");
             mänguSeis.setElud(mänguSeis.getElud() - 1);
-            jadagenereeria.puhasta();
         }
+
+        System.out.println("Elusid alles: " + mänguSeis.getElud());
     }
 }
