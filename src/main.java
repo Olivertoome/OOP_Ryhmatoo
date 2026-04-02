@@ -65,13 +65,28 @@
  *
  * Rühmaliikmete osalemine:
  *
- * Tegime
+ * Projekti käigus tegime enamus asju koos, aitasime üksteist,
+ * parandasime vigu ja täiendasime koodi ühiselt. Lõpuks võib öelda, et kõik
+ * panustasid projekti erinevatesse osadesse ja töö valmis koostööna.
+ *
+ * Algne jaotus:
+ *
+ * Mõtlesime jaotada ära klassid: PunktiHaldur, MänguSeis ja Jadagenereeria,
+ * seejärel tegeleda koos Mäng klassiga.
  *
  * Oliver Toome:
+ * Klass PunktiHaldur
+ * parim_tulemus.txt
+ * Klass Mäng
  *
  * Jan Tristan Moorlat:
+ * Klass MänguSeis
+ * Klass main
+ * Klass Mäng
  *
  * Karl Teetlaus:
+ * Klass Jadagenereeria
+ * Klass Mäng
  *
  */
 
