@@ -1,3 +1,4 @@
+package com.example.oop_ryhmatoo;
 /**
  * Hoiab mängu hetkeseisu: elude arv, punktisumma, parim tulemus.
  *

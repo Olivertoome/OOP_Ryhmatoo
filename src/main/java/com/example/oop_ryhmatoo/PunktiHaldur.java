@@ -1,6 +1,6 @@
+package com.example.oop_ryhmatoo;
 import java.io.*;
 import java.util.Scanner;
-
 /**
  * Tegeleb faili parim_tulemus.txt lugemise ja kirjutamisega.
  * Loeb olemasoleva rekordi ning salvestab vajadusel uue.

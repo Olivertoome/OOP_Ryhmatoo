@@ -1,3 +1,4 @@
+package com.example.oop_ryhmatoo;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
